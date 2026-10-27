@@ -1,0 +1,8 @@
+*{box-sizing:border-box}body{margin:0;font:17px/1.6 Georgia,serif;color:#222;background:#fbfaf7}
+header{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;padding:1rem 2rem;background:#fff;border-bottom:1px solid #e5e0d5}
+.logo{font-size:1.4rem;font-weight:bold;color:#1f4e5f;text-decoration:none}nav a{margin-left:1rem;color:#333;text-decoration:none}nav a.on,nav a:hover{color:#1f4e5f;border-bottom:2px solid #c9a227}
+main{max-width:860px;margin:0 auto;padding:1rem 1.5rem 3rem}.hero{text-align:center;padding:5rem 1rem;background:#1f4e5f url(images/terrasse_site.jpeg) center/cover;color:#fff;margin:0 -1.5rem 2rem}
+.stars{color:#c9a227;font-size:2rem;margin:0}.btn{display:inline-block;background:#c9a227;color:#fff;padding:.6rem 1.2rem;border:0;border-radius:4px;text-decoration:none;cursor:pointer;font:inherit}
+.chips span{display:inline-block;background:#eee8d8;border-radius:20px;padding:.2rem .8rem;margin:.2rem}h1,h2,h3{color:#1f4e5f}a{color:#1f4e5f}
+.todo{background:#fff3cd;padding:.5rem 1rem;border-radius:4px}form label{display:block;margin:1rem 0}input,textarea{width:100%;padding:.5rem;font:inherit}
+footer{text-align:center;padding:2rem;background:#fff;border-top:1px solid #e5e0d5;font-size:.9rem}@media(max-width:600px){nav a{display:inline-block;margin:.3rem .6rem 0 0}}
