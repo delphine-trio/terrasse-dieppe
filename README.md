@@ -1,14 +1,16 @@
 # La Terrasse de Dieppe
 
-Site statique (HTML/CSS). Aucune étape de build.
+Site statique (HTML/CSS), sans étape de build.
+
+## Pages
+index, gite (descriptif), equipements, plans, photos, activites, acces, travaux, contact.
+
+## Images
+Voir images/LISEZMOI.md : liste complète des 63 noms de fichiers attendus.
 
 ## Test local
-`python3 -m http.server` puis http://localhost:8000
-
-## Mise en ligne
-Poussez sur GitHub, puis Settings > Pages > branche main. Pour un domaine perso, ajoutez un fichier CNAME et réglez les DNS.
+`python -m http.server` puis http://localhost:8000
 
 ## À compléter
-- images/ : photos (terrasse_site.jpeg pour l'en-tête)
-- acces.html : adresse + carte
+- acces.html : adresse et carte
 - contact.html : remplacer VOTRE_ID par l'identifiant Formspree

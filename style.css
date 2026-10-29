@@ -1,8 +1,322 @@
-*{box-sizing:border-box}body{margin:0;font:17px/1.6 Georgia,serif;color:#222;background:#fbfaf7}
-header{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;padding:1rem 2rem;background:#fff;border-bottom:1px solid #e5e0d5}
-.logo{font-size:1.4rem;font-weight:bold;color:#1f4e5f;text-decoration:none}nav a{margin-left:1rem;color:#333;text-decoration:none}nav a.on,nav a:hover{color:#1f4e5f;border-bottom:2px solid #c9a227}
-main{max-width:860px;margin:0 auto;padding:1rem 1.5rem 3rem}.hero{text-align:center;padding:5rem 1rem;background:#1f4e5f url(images/terrasse_site.jpeg) center/cover;color:#fff;margin:0 -1.5rem 2rem}
-.stars{color:#c9a227;font-size:2rem;margin:0}.btn{display:inline-block;background:#c9a227;color:#fff;padding:.6rem 1.2rem;border:0;border-radius:4px;text-decoration:none;cursor:pointer;font:inherit}
-.chips span{display:inline-block;background:#eee8d8;border-radius:20px;padding:.2rem .8rem;margin:.2rem}h1,h2,h3{color:#1f4e5f}a{color:#1f4e5f}
-.todo{background:#fff3cd;padding:.5rem 1rem;border-radius:4px}form label{display:block;margin:1rem 0}input,textarea{width:100%;padding:.5rem;font:inherit}
-footer{text-align:center;padding:2rem;background:#fff;border-top:1px solid #e5e0d5;font-size:.9rem}@media(max-width:600px){nav a{display:inline-block;margin:.3rem .6rem 0 0}}
+* {
+    box-sizing: border-box
+}
+
+body {
+    margin: 0;
+    font: 17px/1.6 Georgia, serif;
+    color: #222;
+    background: #fbfaf7
+}
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: .8rem 2rem;
+    background: #fff;
+    border-bottom: 1px solid #e5e0d5
+}
+
+.logo {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #1f4e5f;
+    text-decoration: none
+}
+
+nav a {
+    margin-left: 1rem;
+    color: #333;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: .85rem;
+    letter-spacing: .05em
+}
+
+nav a.on,
+nav a:hover {
+    color: #1f4e5f;
+    border-bottom: 2px solid #c9a227
+}
+
+main {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 1rem 1.5rem 3rem
+}
+
+h1,
+h2,
+h3 {
+    color: #1f4e5f
+}
+
+a {
+    color: #1f4e5f
+}
+
+.ph {
+    position: relative;
+    margin: 0;
+    background: #e6e2d6;
+    border: 2px dashed #b9b19b;
+    border-radius: 6px;
+    min-height: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden
+}
+
+.ph::after {
+    content: "📷 " attr(data-name);
+    position: absolute;
+    color: #7a7360;
+    font: 13px monospace;
+    text-align: center;
+    padding: .5rem;
+    z-index: 0
+}
+
+.ph img {
+    position: relative;
+    z-index: 1;
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover
+}
+
+.ph:has(img) {
+    border: 0;
+    min-height: 0;
+    background: none
+}
+
+.ph:has(img)::after {
+    display: none
+}
+
+.wide {
+    min-height: 220px;
+    margin: 1rem 0
+}
+
+.plan {
+    min-height: 280px
+}
+
+.hero {
+    position: relative;
+    max-width: 333px;
+    /* margin: 0 -1.5rem 2rem */
+    margin: 0 auto 2rem;
+}
+
+.hero-img {
+    height: auto;
+    aspect-ratio: auto;
+    min-height: 110px;   /* jamais plus plat que ça (previous value: 380)*/
+    max-height: none;   /* jamais plus haut que ça */
+    border-radius: 0
+}
+
+.hero-img img {
+  width: 100%;
+  height: auto;         /* hauteur naturelle, proportions respectées */
+  object-fit: contain;
+}
+
+.hero-t {
+    position: absolute;
+    z-index: 2;
+    inset: 0;
+    display: block;  /* flex */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: right; /* center */
+    pointer-events: none;
+    color: #fff;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, .5)
+}
+
+.hero-t * {
+    pointer-events: auto
+}
+
+.stars {
+    color: #c9a227;
+    font-size: 2rem;
+    margin: .2rem 0 1rem
+}
+
+.btn {
+    display: inline-block;
+    background: #c9a227;
+    color: #fff;
+    padding: .6rem 1.2rem;
+    border: 0;
+    border-radius: 4px;
+    text-decoration: none;
+    cursor: pointer;
+    font: inherit;
+    text-shadow: none
+}
+
+.btn.alt {
+    background: #1f4e5f
+}
+
+.btn.alt2 {
+  background: #4ab595;
+}
+
+.chips span {
+    display: inline-block;
+    background: #eee8d8;
+    border-radius: 20px;
+    padding: .2rem .8rem;
+    margin: .2rem
+}
+
+.grid2,
+.grid3,
+.grid4,
+.galerie {
+    display: grid;
+    gap: .8rem;
+    margin: 1rem 0
+}
+
+.grid2 {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr))
+}
+
+.grid3 {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr))
+}
+
+.grid4 {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr))
+}
+
+.galerie {
+    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr))
+}
+
+.tile {
+    text-decoration: none;
+    text-align: center;
+    color: #1f4e5f;
+    font-weight: bold
+}
+
+.tile span {
+    display: block;
+    margin-top: .3rem
+}
+
+.floor {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.2rem;
+    align-items: center;
+    margin: 1.5rem 0
+}
+
+.floor:nth-child(even) .ph {
+    order: 2
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem
+}
+
+.card {
+    background: #fff;
+    border: 1px solid #e5e0d5;
+    border-radius: 6px;
+    padding: .8rem 1.2rem
+}
+
+.card h3 {
+    margin: .2rem 0
+}
+
+.sub {
+    text-align: center
+}
+
+.sub a,
+.sub strong {
+    margin: 0 .3rem
+}
+
+section {
+    scroll-margin-top: 70px
+}
+
+.note,
+.todo {
+    background: #fff3cd;
+    padding: .5rem 1rem;
+    border-radius: 4px
+}
+
+.map {
+    margin: 1rem 0
+}
+
+.incl {
+    text-align: center;
+    background: #eee8d8;
+    padding: .6rem;
+    border-radius: 4px
+}
+
+form label {
+    display: block;
+    margin: 1rem 0
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: .5rem;
+    font: inherit
+}
+
+footer {
+    text-align: center;
+    padding: 2rem;
+    background: #fff;
+    border-top: 1px solid #e5e0d5;
+    font-size: .9rem
+}
+
+@media(max-width:700px) {
+    .floor {
+        grid-template-columns: 1fr
+    }
+
+    .floor:nth-child(even) .ph {
+        order: 0
+    }
+
+    nav a {
+        display: inline-block;
+        margin: .3rem .6rem 0 0
+    }
+
+    .hero-t h1 {
+        font-size: 1.8rem
+    }
+}
